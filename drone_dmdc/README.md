@@ -85,11 +85,6 @@ python project/dmdc_identify.py
 
 This loads the flight data, identifies the DMDc model, and saves results in `results/`.
 
-## Team
-
-- Shivananda
-- [Add team member names here]
-
 ## License
 
 This project is for educational purposes. The simulation framework uses the open-source [gym-pybullet-drones](https://github.com/learnsyslab/gym-pybullet-drones) library.
