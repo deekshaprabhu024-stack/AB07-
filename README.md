@@ -4,21 +4,6 @@
 
 ---
 
-## Amrita Vishwa Vidyapeetham
-
-<!-- Replace with the official Amrita logo -->
-<!-- ![Amrita Vishwa Vidyapeetham](path/to/amrita_logo.png) -->
-
-### Team Members
-
-| Name | Roll No. | Email |
-|---|---|---|
-| [Member 1] | [Roll No.] | [Email] |
-| [Member 2] | [Roll No.] | [Email] |
-| [Member 3] | [Roll No.] | [Email] |
-| [Member 4] | [Roll No.] | [Email] |
-
----
 
 # Abstract
 
@@ -26,9 +11,9 @@ This project investigates data-driven system identification of quadcopter attitu
 
 The identified model is represented as
 
-\[
+$$
 x_{k+1} = A x_k + B u_k,
-\]
+$$
 
 where the state contains quaternion attitude and body angular-rate information, while the input contains transformed quadcopter motor commands.
 
@@ -65,15 +50,15 @@ The objective of this project is therefore:
 
 The target system is a quadcopter attitude subsystem described by the discrete-time model
 
-\[
+$$
 x_{k+1} = A x_k + B u_k.
-\]
+$$
 
 The project specifically investigates whether the dominant attitude dynamics of the simulated quadcopter can be approximated using a low-order linear model identified only from flight data.
 
 The current state definition is
 
-\[
+$$
 x_k =
 \begin{bmatrix}
 q_0 &
@@ -84,12 +69,12 @@ q_3 &
 \omega_y &
 \omega_z
 \end{bmatrix}^{T},
-\]
+$$
 
 where
 
-- \(q_0,q_1,q_2,q_3\) are quaternion components,
-- \(\omega_x,\omega_y,\omega_z\) are body angular rates.
+- $(q_0,q_1,q_2,q_3\)$ are quaternion components,
+- $(\omega_x,\omega_y,\omega_z\)$ are body angular rates.
 
 The control input consists of four transformed motor coordinates.
 
@@ -101,27 +86,27 @@ The control input consists of four transformed motor coordinates.
 
 Given sequential state measurements,
 
-\[
+$$
 X_1 =
 \begin{bmatrix}
 x_1 & x_2 & \cdots & x_{N-1}
 \end{bmatrix},
-\]
+$$
 
 and
 
-\[
+$$
 X_2 =
 \begin{bmatrix}
 x_2 & x_3 & \cdots & x_N
 \end{bmatrix},
-\]
+$$
 
 standard DMD attempts to identify a linear operator
 
-\[
+$$
 X_2 \approx A X_1.
-\]
+$$
 
 This provides a data-driven approximation to the local dynamics of the measured system.
 
@@ -131,60 +116,54 @@ This provides a data-driven approximation to the local dynamics of the measured 
 
 For an actuated system, the state evolution depends on both the current state and the applied input:
 
-\[
+$$
 x_{k+1}=A x_k+B u_k.
-\]
+$$
 
 Collecting the state and input snapshots gives
 
-\[
+$$
 \Omega =
 \begin{bmatrix}
 X_1\\
 U_1
 \end{bmatrix},
-\]
+$$
 
 where
 
-\[
+$$
 U_1 =
 \begin{bmatrix}
 u_1 & u_2 & \cdots & u_{N-1}
 \end{bmatrix}.
-\]
+$$
 
 The data equation becomes
 
-\[
+$$
 X_2 =
 \begin{bmatrix}
 A & B
 \end{bmatrix}
 \Omega.
-\]
+$$
 
 The combined matrix is estimated using the Moore--Penrose pseudoinverse:
 
-\[
-\boxed{
-\begin{bmatrix}
-A & B
-\end{bmatrix}
-=
-X_2\Omega^\dagger
-}
-\]
+$$
+A & B = X_2\Omega^\dagger
+$$
 
 where \(\Omega^\dagger\) denotes the Moore--Penrose pseudoinverse.
 
 Thus,
 
-\[
+$$
 \boxed{
 x_{k+1}=A x_k+B u_k
 }
-\]
+$$
 
 is the identified discrete-time model.
 
