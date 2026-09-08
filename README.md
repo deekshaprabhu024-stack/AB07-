@@ -12,8 +12,8 @@
 | Deeksha Prabhu | CB.SC.U4AIE24015 | deekshaprabhu024@gmail.com |
 | Shivanandana | CB.SC.U4AIE24049 | shivanandana83@gmail.com |
 | K. Supriya | CB.SC.U4AIE24025 | ksupriya2430@gmail.com |
-| Sridevi Ajo B | CB.SC.U4AIE24166 | cb.sc.u4aie24166@cb.students.amrita.edu |
-| Diya P. Nair | CB.SC.U4AIE24111 | diyapnair07@gmail.com |
+| V R Sridevi | CB.SC.U4AIE24166 | sridevirajansri@gmail.com |
+| Diya Prakash | CB.SC.U4AIE24111 | diyapnair07@gmail.com |
 
 ---
 
